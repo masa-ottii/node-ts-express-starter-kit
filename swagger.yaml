@@ -1,0 +1,122 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Todo App
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /todos:
+    get:
+      summary: Todoの一覧を得る
+      operationId: getTodos
+      description: |
+        get list of todo 
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: '#/definitions/Todo'
+        400:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    post:
+      summary: Todoを一件追加する
+      operationId: addTodo
+      description: |
+        add a todo
+      parameters:
+        - name: body
+          in: body
+          description: TODO object
+          required: true
+          schema:
+             $ref: '#/definitions/Todo'
+      responses:
+        201:
+          description: OK
+        400:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+
+  /todos/{todo_id}/:
+    get:
+      summary: idを使って特定のTodoを得る
+      operationId: getTodoById
+      description: |
+        get a todo by id
+      parameters:
+        - name: todo_id
+          in: path
+          required: true
+          type: integer
+          description: ID of TODO
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Todo'
+        400:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    put:
+      summary: idを使って特定のTodoを変更する
+      operationId: updateTodo
+      description: |
+        update a todo
+      parameters:
+        - name: todo_id
+          in: path
+          required: true
+          type: integer
+          description: ID of TODO
+        - name: body
+          in: body
+          description: TODO object
+          required: true
+          schema:
+             $ref: '#/definitions/Todo'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Todo'
+        400:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+definitions:
+  Todo:
+    type: object
+    required:
+      - id
+      - naiyo
+      - kinkyu
+    properties:
+      id:
+        type: integer
+      naiyo:
+        type: string
+      kinkyu:
+        type: string
+  ErrorResponse:
+    type: object
+    required:
+      - code
+      - name
+      - message
+    properties:
+      code:
+        type: integer
+      name:
+        type: string
+      message:
+        type: string

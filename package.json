@@ -1,0 +1,46 @@
+{
+  "name": "node-ts-express-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/server.js",
+    "test": "jest --coverage --verbose",
+    "swagger-codegen": "swagger-codegen-ts-express swagger.yaml src/routers/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "http-errors": "^1.7.3",
+    "mysql2": "^2.1.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/helmet": "0.0.45",
+    "@types/http-errors": "^1.6.3",
+    "@types/jest": "^24.0.23",
+    "@types/mysql2": "github:types/mysql2",
+    "@types/node": "^12.12.20",
+    "@types/supertest": "^2.0.8",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "eslint": "^6.7.2",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2",
+    "swagger-codegen-ts-express": "https://github.com/masa-ottii/swagger-codegen-ts-express",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  }
+}
