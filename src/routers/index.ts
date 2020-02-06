@@ -1,4 +1,4 @@
-// 一括ルーティング設定ファル
+// 一括ルーティング設定ファイル
 import express from 'express'
 import * as handler from '../handlers'
 
