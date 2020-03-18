@@ -6,7 +6,7 @@ const getConnection = async () => {
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
             port: 43306,
-            database: 'todo_db'
+            database: 'workshop_db'
         })
         return connection
     }
