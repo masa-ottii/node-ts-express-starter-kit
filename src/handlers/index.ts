@@ -1,4 +1,4 @@
 // ルートハンドラ取りまとめ
 
-// todos.ts内のルートハンドラをインポートおよびエクスポート
-export * from './todos'
+// users.ts内のルートハンドラをインポートおよびエクスポート
+export * from './users';
