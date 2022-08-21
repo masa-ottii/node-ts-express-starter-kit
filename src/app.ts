@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 
 // TODO
 
-
 // ルートハンドラーの設定
 import router from './routers';
 app.use('/', router);

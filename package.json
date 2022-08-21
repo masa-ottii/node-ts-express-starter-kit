@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "tsc --watch & nodemon dist/server.js",
+    "start": "nodemon",
     "test": "jest --coverage --verbose",
     "swagger-codegen": "swagger-codegen-ts-express swagger.yaml src/routers/index.ts"
   },
